@@ -1,0 +1,44 @@
+.main_caramel {
+  background: $color-bg2;
+  .wrap {
+    display: flex;
+    gap: 80px;
+    height: 100%;
+
+    > * {
+      flex: 1;
+    }
+    .left {
+      background-image: url(../images/caramel_bg.jpg);
+    }
+    .right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .desc_box {
+        margin: 0 0 32px 0;
+        .s_title {
+          display: block;
+          margin: 0 0 16px 0;
+          font-weight: 300;
+          padding: 0 0 0 8px;
+          letter-spacing: 0.2em;
+        }
+        h2 {
+          margin: 0 0 40px 0;
+          width: 320px;
+          font-size: 100px;
+          font-weight: 600;
+        }
+        p {
+          margin: 0 0 24px 0;
+          width: 560px;
+          line-height: 1.5;
+        }
+      }
+      .btn {
+        align-self: flex-start;
+      }
+    }
+  }
+}
