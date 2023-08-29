@@ -30,6 +30,24 @@ $(function () {
       .removeClass("on");
   });
 
+  const main_slide = new Swiper(".main_slide", {
+    loop: true,
+    speed: 1000,
+    autoplay: {
+      delay: 6000,
+      disableOnInteraction: false,
+    },
+    // on: {
+    //   slideChangeTransitionStart: function () {
+    //     $(".MainVisual .dots li")
+    //       .eq(this.realIndex)
+    //       .addClass("on")
+    //       .siblings()
+    //       .removeClass("on");
+    //   },
+    // },
+  });
+
   const basic_slide = new Swiper(".basic_slide", {
     loop: true,
     speed: 1000,
