@@ -54,7 +54,7 @@ address {
 }
 
 .btn {
-  padding: 10px 24px 10px 28px;
+  padding: 12px 24px 12px 28px;
   border: 1px solid #b23939;
   border-radius: 0 0 16px 0;
   font-weight: 300;
@@ -103,6 +103,28 @@ address {
 .header .gnb > ul li a {
   font-size: 18px;
   font-weight: 500;
+}
+
+.m_link {
+  position: fixed;
+  inset: 50% 80px auto auto;
+  z-index: 999;
+  transform: translate(0, -50%);
+}
+.m_link ul li {
+  margin: 0 0 16px 0;
+}
+.m_link ul li a {
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: #f4adad;
+  border-radius: 50%;
+  font-size: 0;
+  transition: 0.5s;
+}
+.m_link ul li.on a {
+  background: #b23939;
 }
 
 .main_visual .main_slide .itm .slide-img {
@@ -301,6 +323,7 @@ address {
 .main_product .tab .product_tab .product_tab_content .itm figure img {
   margin: 0 0 24px 0;
   width: 100%;
+  border-radius: 16px;
 }
 .main_product .tab .product_tab .product_tab_content .itm figure figcaption strong {
   margin: 0 0 8px 0;
@@ -348,30 +371,28 @@ address {
 .main_hiyorika {
   background: url(../images/hiyorika_bg.jpg) no-repeat center center/cover;
 }
-.main_hiyorika .con {
-  height: 100%;
-}
-.main_hiyorika .con .desc_box {
+.main_hiyorika .desc_box {
   padding: 170px 0;
 }
-.main_hiyorika .con .desc_box .desc {
+.main_hiyorika .desc_box .desc {
   margin: 0 0 64px 0;
 }
-.main_hiyorika .con .desc_box .desc span {
+.main_hiyorika .desc_box .desc span {
   display: block;
   margin: 0 0 16px 0;
   font-weight: 300;
   padding: 0 0 0 8px;
   letter-spacing: 0.2em;
 }
-.main_hiyorika .con .desc_box .desc h2 {
+.main_hiyorika .desc_box .desc h2 {
   margin: 0 0 40px 0;
   width: 320px;
   font-size: 100px;
   font-weight: 600;
 }
-.main_hiyorika .con .desc_box .desc p {
+.main_hiyorika .desc_box .desc p {
   margin: 0 0 24px 0;
+  width: 560px;
   line-height: 1.5;
 }
 

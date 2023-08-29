@@ -1,29 +1,27 @@
 .main_hiyorika {
   background: url(../images/hiyorika_bg.jpg) no-repeat center center/cover;
 
-  .con {
-    height: 100%;
-    .desc_box {
-      padding: 170px 0;
-      .desc {
-        margin: 0 0 64px 0;
-        span {
-          display: block;
-          margin: 0 0 16px 0;
-          font-weight: 300;
-          padding: 0 0 0 8px;
-          letter-spacing: 0.2em;
-        }
-        h2 {
-          margin: 0 0 40px 0;
-          width: 320px;
-          font-size: 100px;
-          font-weight: 600;
-        }
-        p {
-          margin: 0 0 24px 0;
-          line-height: 1.5;
-        }
+  .desc_box {
+    padding: 170px 0;
+    .desc {
+      margin: 0 0 64px 0;
+      span {
+        display: block;
+        margin: 0 0 16px 0;
+        font-weight: 300;
+        padding: 0 0 0 8px;
+        letter-spacing: 0.2em;
+      }
+      h2 {
+        margin: 0 0 40px 0;
+        width: 320px;
+        font-size: 100px;
+        font-weight: 600;
+      }
+      p {
+        margin: 0 0 24px 0;
+        width: 560px;
+        line-height: 1.5;
       }
     }
   }

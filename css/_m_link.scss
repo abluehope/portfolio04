@@ -1,0 +1,26 @@
+.m_link {
+  position: fixed;
+  inset: 50% 80px auto auto;
+  z-index: 999;
+  transform: translate(0, -50%);
+
+  ul {
+    li {
+      margin: 0 0 16px 0;
+      a {
+        display: block;
+        width: 10px;
+        height: 10px;
+        background: $color-main;
+        border-radius: 50%;
+        font-size: 0;
+        transition: 0.5s;
+      }
+      &.on {
+        a {
+          background: $color-point;
+        }
+      }
+    }
+  }
+}

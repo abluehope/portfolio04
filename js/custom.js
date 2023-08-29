@@ -1,6 +1,19 @@
 $(function () {
   $(".main_full").fullpage({
-    anchors: ["main", "introduct", "product", "hiyorika", "caramel"],
+    anchors: [
+      "main",
+      "introduct",
+      "product",
+      "hiyorika",
+      "caramel",
+      "notice",
+      "footer",
+    ],
+    afterRender: function () {
+      setTimeout(function () {
+        $(".section").eq(0).addClass("on");
+      }, 10);
+    },
   });
 
   $(".product_tab_link li").on("click", function (event) {
