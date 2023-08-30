@@ -1,0 +1,45 @@
+.footer {
+  padding: 40px 0;
+  background: url(../images/foot_bg.png);
+
+  .footer_wrap {
+    display: flex;
+    align-items: center;
+    gap: $size-gap;
+    .left {
+      img {
+        margin: 0 0 16px 0;
+      }
+    }
+
+    .right {
+      .tab {
+        margin: 0 0 8px 0;
+        display: flex;
+        gap: $size-gap;
+        font-size: 15px;
+
+        li {
+          position: relative;
+          & ~ li::before {
+            content: "";
+            position: absolute;
+            top: 7px;
+            left: -14px;
+            width: 1px;
+            height: 10px;
+            transform: translate(-50%, -50%);
+            background: $color-gray;
+          }
+        }
+        strong {
+          font-weight: 600;
+        }
+      }
+      .copy {
+        font-size: 14px;
+        color: $color-gray;
+      }
+    }
+  }
+}

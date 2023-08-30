@@ -14,6 +14,22 @@ $(function () {
         $(".section").eq(0).addClass("on");
       }, 10);
     },
+    onLeave: function (idx, nidx, dir) {
+      $(".m_link li")
+        .eq(nidx - 1)
+        .addClass("on")
+        .siblings()
+        .removeClass("on");
+
+      if (nidx > 1) {
+        $(".header").addClass("on");
+      } else {
+        $(".header").removeClass("on");
+      }
+      if (dir == "up") {
+        $(".header").removeClass("on");
+      }
+    },
   });
 
   $(".product_tab_link li").on("click", function (event) {
@@ -37,15 +53,35 @@ $(function () {
       delay: 6000,
       disableOnInteraction: false,
     },
-    // on: {
-    //   slideChangeTransitionStart: function () {
-    //     $(".MainVisual .dots li")
-    //       .eq(this.realIndex)
-    //       .addClass("on")
-    //       .siblings()
-    //       .removeClass("on");
-    //   },
-    // },
+    on: {
+      init: function () {
+        $(".main_visual .dots li")
+          .eq(this.realIndex)
+          .addClass("on")
+          .siblings()
+          .removeClass("on");
+      },
+      slideChangeTransitionStart: function () {
+        $(".main_visual .dots li")
+          .eq(this.realIndex)
+          .addClass("on")
+          .siblings()
+          .removeClass("on");
+      },
+    },
+  });
+
+  $(".main_visual .arrows .left").on("click", function () {
+    main_slide.slidePrev();
+  });
+  $(".main_visual .arrows .right").on("click", function () {
+    main_slide.slideNext();
+  });
+
+  $(".main_visual .dots li").on("click", function () {
+    const idx = $(this).index();
+    $(this).addClass("on").siblings().removeClass("on");
+    main_slide.slideTo(idx);
   });
 
   const basic_slide = new Swiper(".basic_slide", {

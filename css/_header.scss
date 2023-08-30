@@ -3,26 +3,34 @@
   top: 0;
   left: 0;
   right: 0;
+  height: 80px;
   z-index: 999;
+  overflow: hidden;
 
-  background: rgba($color: $color-white, $alpha: 0.5);
-  // backdrop-filter: blur(10px);
+  background: rgba($color: $color-white, $alpha: 0.25);
+  backdrop-filter: blur(10px);
+
+  border-bottom: 1px solid $color-border;
+
+  &.on {
+    height: 0;
+  }
 
   .header_wrap {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 80px;
-  }
 
-  .gnb > ul {
-    display: flex;
-    gap: 30px;
+    .gnb > ul {
+      display: flex;
+      gap: 30px;
 
-    li {
-      a {
-        font-size: 18px;
-        font-weight: 500;
+      li {
+        a {
+          font-size: 18px;
+          font-weight: 500;
+        }
       }
     }
   }
