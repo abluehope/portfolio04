@@ -27,7 +27,7 @@
         li {
           display: flex;
           justify-content: space-between;
-          padding: 16px 0;
+          padding: 24px 0;
           border-bottom: 1px solid #ddd;
 
           a {
@@ -41,9 +41,10 @@
                 position: absolute;
                 top: 50%;
                 left: 0;
-                width: 5px;
-                height: 5px;
-                background: #333;
+                width: 4px;
+                height: 4px;
+                border-radius: 50%;
+                background: $color-point;
                 transform: translate(0, -50%);
               }
             }

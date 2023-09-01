@@ -117,12 +117,124 @@ address {
   font-size: 18px;
   font-weight: 500;
 }
+.header .mobile_btn {
+  display: none;
+}
+@media (max-width: 768px) {
+  .header .mobile_btn {
+    display: block;
+    position: fixed;
+    inset: 25px 30px auto auto;
+    z-index: 1000;
+    width: 30px;
+    height: 30px;
+  }
+  .header .mobile_btn::before, .header .mobile_btn::after {
+    content: "";
+    position: absolute;
+    inset: 14px 5px auto 5px;
+    height: 2px;
+    background: #333333;
+    transition: 0.5s;
+  }
+  .header .mobile_btn button {
+    border: none;
+    outline: none;
+    background: transparent;
+  }
+  .header .mobile_btn button::before {
+    content: "";
+    inset: 7px 5px auto 5px;
+    position: absolute;
+    height: 2px;
+    background: #333333;
+    opacity: 1;
+    transition: 0.5s;
+  }
+  .header .mobile_btn button::after {
+    content: "";
+    inset: auto 5px 7px 5px;
+    position: absolute;
+    height: 2px;
+    background: #333333;
+    opacity: 1;
+    transition: 0.5s;
+  }
+  .header .mobile_btn.on::before {
+    transform: rotate(45deg);
+  }
+  .header .mobile_btn.on::after {
+    transform: rotate(-45deg);
+  }
+  .header .mobile_btn.on button::before, .header .mobile_btn.on button::after {
+    opacity: 0;
+  }
+}
+@media (max-width: 768px) {
+  .header h1 {
+    z-index: 1000;
+  }
+  .header h1 img {
+    width: 120px;
+  }
+  .header .gnb {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    z-index: 999;
+    background: #ffffff;
+    width: 100%;
+    height: 100vh;
+    padding: 150px 24px 0 24px;
+    transition: 0.5s;
+  }
+  .header .gnb.on {
+    left: 0;
+  }
+  .header .gnb > ul {
+    flex-direction: column;
+    gap: 0;
+  }
+  .header .gnb > ul li {
+    line-height: 48px;
+    border-bottom: 1px solid #dddddd;
+  }
+  .header .gnb > ul li a {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .header .gnb > ul li:hover .sub {
+    display: none;
+  }
+  .header .gnb > ul .sub {
+    display: none;
+    position: static;
+    transform: translate(0, 0);
+    background: #f9f9f9;
+    padding: 0;
+    width: auto;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    transition: none;
+  }
+}
 
 .m_link {
   position: fixed;
   inset: 50% 80px auto auto;
   z-index: 999;
   transform: translate(0, -50%);
+}
+@media (max-width: 768px) {
+  .m_link {
+    inset: auto auto -10px 50%;
+    transform: translate(-50%, -50%);
+  }
+  .m_link ul {
+    display: flex;
+    gap: 16px;
+  }
 }
 .m_link ul li {
   margin: 0 0 16px 0;
@@ -150,8 +262,25 @@ address {
   transform: translate(-50%, -50%);
   z-index: 999;
 }
-.main_visual .slogan h2 {
+@media (max-width: 768px) {
+  .main_visual .slogan {
+    width: 100%;
+  }
+}
+.main_visual .slogan .img_box {
   margin: 0 0 24px 0;
+  text-align: center;
+}
+.main_visual .slogan .img_box img {
+  width: 200px;
+}
+@media (max-width: 768px) {
+  .main_visual .slogan .img_box img {
+    width: 100px;
+  }
+}
+.main_visual .slogan h2 {
+  margin: 0 0 16px 0;
   font-family: "Makgeolli";
   font-size: 72px;
   color: #ffffff;
@@ -161,7 +290,18 @@ address {
   font-size: 18px;
   font-weight: 300;
   text-align: center;
+  line-height: 1.25;
   color: #ffffff;
+}
+@media (max-width: 768px) {
+  .main_visual .slogan p {
+    font-size: 16px;
+  }
+}
+@media (max-width: 768px) {
+  .main_visual .slogan {
+    top: 45%;
+  }
 }
 .main_visual .main_slide .itm {
   position: relative;
@@ -219,6 +359,11 @@ address {
 .main_visual .arrows .right:hover {
   color: white;
 }
+@media (max-width: 768px) {
+  .main_visual .arrows {
+    display: none;
+  }
+}
 .main_visual .dots {
   position: absolute;
   bottom: 20%;
@@ -227,6 +372,12 @@ address {
   transform: translate(-50%, 0);
   display: flex;
   gap: 30px;
+}
+@media (max-width: 768px) {
+  .main_visual .dots {
+    bottom: 21%;
+    gap: 16px;
+  }
 }
 .main_visual .dots li {
   position: relative;
@@ -286,6 +437,11 @@ address {
   font-size: 32px;
   text-align: center;
   animation: moving 1s infinite;
+}
+@media (max-width: 768px) {
+  .main_visual .scroll_icon {
+    bottom: 5%;
+  }
 }
 @keyframes moving {
   0% {
@@ -626,7 +782,7 @@ address {
 .main_notice .content .left ul li {
   display: flex;
   justify-content: space-between;
-  padding: 16px 0;
+  padding: 24px 0;
   border-bottom: 1px solid #ddd;
 }
 .main_notice .content .left ul li a {
@@ -641,9 +797,10 @@ address {
   position: absolute;
   top: 50%;
   left: 0;
-  width: 5px;
-  height: 5px;
-  background: #333;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #b23939;
   transform: translate(0, -50%);
 }
 .main_notice .content .left ul li a:hover {

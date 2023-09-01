@@ -1,4 +1,21 @@
 $(function () {
+  $(".mobile_btn").on("click", function () {
+    $(this).toggleClass("on");
+    $(".gnb").toggleClass("on");
+  });
+
+  $(".gnb").on("wheel touchmove", function (e) {
+    e.preventDefault();
+  });
+
+  $(".gnb>ul>li>a").on("click", function (e) {
+    if ($(".gnb").hasClass("on")) {
+      e.preventDefault();
+    }
+    $(this).next().stop().slideToggle();
+    $(this).parent().siblings().find(".sub").slideUp();
+  });
+
   $(".main_full").fullpage({
     anchors: [
       "main",

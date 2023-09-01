@@ -4,6 +4,14 @@
   z-index: 999;
   transform: translate(0, -50%);
 
+  @include res() {
+    inset: auto auto -10px 50%;
+    transform: translate(-50%, -50%);
+    ul {
+      display: flex;
+      gap: 16px;
+    }
+  }
   ul {
     li {
       margin: 0 0 16px 0;

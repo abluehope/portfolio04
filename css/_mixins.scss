@@ -18,3 +18,9 @@
     color: $color-white;
   }
 }
+
+@mixin res() {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
