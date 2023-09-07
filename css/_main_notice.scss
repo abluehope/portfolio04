@@ -4,7 +4,7 @@
     display: flex;
     justify-content: space-between;
     h2 {
-      font-size: 40px;
+      font-size: 32px;
       font-weight: 700;
       margin: 0 0 24px 0;
     }
@@ -21,20 +21,35 @@
       flex: 1;
     }
 
+    @include res() {
+      flex-direction: column;
+    }
+
     .left {
       ul {
         border-top: 2px solid $color-body;
         li {
           display: flex;
           justify-content: space-between;
+          align-items: center;
           padding: 24px 0;
           border-bottom: 1px solid #ddd;
+
+          @include res() {
+            padding: 16px 0;
+          }
 
           a {
             transition: 0.5s;
             strong {
               position: relative;
               padding: 0 0 0 20px;
+
+              display: -webkit-box;
+              white-space: normal;
+              -webkit-line-clamp: 1;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
 
               &::before {
                 content: "";
@@ -64,9 +79,14 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 8px;
-
+      a {
+        display: block;
+      }
       .itm {
         position: relative;
+        a {
+          height: 100%;
+        }
 
         .txt_box {
           position: absolute;

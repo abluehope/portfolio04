@@ -1,86 +1,68 @@
 .main_introduce {
-  .con {
-    position: relative;
+  background: url(../images/grid.png);
+  .content {
     display: flex;
-    height: 100%;
-    .desc_box {
-      margin: 0 $size-gap 0 0;
-      .desc {
-        padding: 170px 0;
-        h2 {
-          margin: 0 0 40px 0;
-          font-size: 40px;
-          font-weight: 700;
+    gap: $size-gap;
+    align-items: center;
 
-          &::after {
-            content: "";
-            display: inline-block;
-            vertical-align: 12px;
-            width: 104px;
-            height: 1px;
-            background: #333;
-            margin: 0 10px;
-          }
+    > * {
+      flex: 1;
+    }
+
+    .img_box {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4px;
+
+      .itm {
+        height: 160px;
+        &:nth-child(1) {
+          height: 100%;
+          grid-row: 1 / span 2;
+          background: url(../images/main_introduct_01.jpg) no-repeat center
+            center/cover;
         }
-        p {
-          margin: 0 0 24px 0;
-          line-height: 1.5;
+        &:nth-child(2) {
+          background: url(../images/main_introduct_02.jpg) no-repeat center
+            center/cover;
         }
-      }
-
-      .link {
-        display: flex;
-        gap: $size-gap;
-        figure {
-          &:hover {
-            .img_box {
-              img {
-                transform: scale(1.1);
-              }
-            }
-          }
-
-          .img_box {
-            margin: 0 0 16px 0;
-            overflow: hidden;
-
-            img {
-              transition: 0.5s;
-            }
-          }
-
-          figcaption {
-            strong {
-              display: block;
-              margin: 0 0 8px 0;
-              text-align: center;
-              font-size: 18px;
-              font-weight: 600;
-            }
-            span {
-              display: block;
-              text-align: center;
-              font-size: 14px;
-            }
-          }
+        &:nth-child(3) {
+          background: url(../images/main_introduct_03.jpg) no-repeat center
+            center/cover;
+        }
+        &:nth-child(4) {
+          background: url(../images/main_introduct_04.jpg) no-repeat center
+            center/cover;
+        }
+        &:nth-child(5) {
+          background: url(../images/main_introduct_05.jpg) no-repeat center
+            center/cover;
+        }
+        &:nth-child(6) {
+          background: url(../images/main_introduct_06.jpg) no-repeat center
+            center/cover;
+        }
+        &:nth-child(7) {
+          grid-column: 2 / span 2;
+          background: url(../images/main_introduct_07.jpg) no-repeat bottom 30%
+            center/cover;
         }
       }
     }
 
-    .img_box {
-      display: flex;
-      gap: 30px;
-      margin: 0 0 0 auto;
-      .left {
-        background: url(../images/introduct_00.jpg) no-repeat 63% center/cover;
-        margin: auto 0 0 0;
-        width: 240px;
-        height: 640px;
+    .txt_box {
+      h2 {
+        font-size: 48px;
+        font-weight: 700;
+        margin: 0 0 24px 0;
       }
-      .right {
-        background: url(../images/introduct_000.jpg) no-repeat 50% center/cover;
-        width: 320px;
-        height: 640px;
+      p {
+        margin: 0 0 24px 0;
+        line-height: 1.5;
+
+        &:nth-child(3) {
+          margin: 0 0 48px 0;
+        }
       }
     }
   }

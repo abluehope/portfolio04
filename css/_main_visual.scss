@@ -17,9 +17,12 @@
       text-align: center;
       img {
         width: 200px;
+      }
 
-        @include res() {
-          width: 100px;
+      @include res() {
+        margin: 0 0 8px 0;
+        img {
+          width: 80px;
         }
       }
     }
@@ -30,6 +33,10 @@
       font-size: 72px;
       color: $color-white;
       text-align: center;
+
+      @include res() {
+        font-size: 48px;
+      }
     }
     p {
       font-size: 18px;

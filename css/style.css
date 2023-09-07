@@ -60,6 +60,7 @@ address {
 }
 
 .btn {
+  display: inline-block;
   padding: 12px 24px 12px 28px;
   border: 1px solid #b23939;
   border-radius: 0 0 16px 0;
@@ -94,20 +95,27 @@ address {
   right: 0;
   height: 80px;
   z-index: 999;
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0.25);
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
-  border-bottom: 1px solid #dddddd;
 }
 .header.on {
-  height: 0;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0px 8px 24px rgba(149, 157, 165, 0.2);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+.header.on .header_wrap h1 img {
+  filter: none;
+}
+.header.on .header_wrap .gnb > ul li a {
+  color: #333333;
 }
 .header .header_wrap {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 80px;
+}
+.header .header_wrap h1 img {
+  filter: brightness(0) invert(1);
 }
 .header .header_wrap .gnb > ul {
   display: flex;
@@ -116,6 +124,7 @@ address {
 .header .header_wrap .gnb > ul li a {
   font-size: 18px;
   font-weight: 500;
+  color: #ffffff;
 }
 .header .mobile_btn {
   display: none;
@@ -275,8 +284,11 @@ address {
   width: 200px;
 }
 @media (max-width: 768px) {
+  .main_visual .slogan .img_box {
+    margin: 0 0 8px 0;
+  }
   .main_visual .slogan .img_box img {
-    width: 100px;
+    width: 80px;
   }
 }
 .main_visual .slogan h2 {
@@ -285,6 +297,11 @@ address {
   font-size: 72px;
   color: #ffffff;
   text-align: center;
+}
+@media (max-width: 768px) {
+  .main_visual .slogan h2 {
+    font-size: 48px;
+  }
 }
 .main_visual .slogan p {
   font-size: 18px;
@@ -455,76 +472,60 @@ address {
   }
 }
 
-.main_introduce .con {
-  position: relative;
+.main_introduce {
+  background: url(../images/grid.png);
+}
+.main_introduce .content {
   display: flex;
+  gap: 30px;
+  align-items: center;
+}
+.main_introduce .content > * {
+  flex: 1;
+}
+.main_introduce .content .img_box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+}
+.main_introduce .content .img_box .itm {
+  height: 160px;
+}
+.main_introduce .content .img_box .itm:nth-child(1) {
   height: 100%;
+  grid-row: 1/span 2;
+  background: url(../images/main_introduct_01.jpg) no-repeat center center/cover;
 }
-.main_introduce .con .desc_box {
-  margin: 0 30px 0 0;
+.main_introduce .content .img_box .itm:nth-child(2) {
+  background: url(../images/main_introduct_02.jpg) no-repeat center center/cover;
 }
-.main_introduce .con .desc_box .desc {
-  padding: 170px 0;
+.main_introduce .content .img_box .itm:nth-child(3) {
+  background: url(../images/main_introduct_03.jpg) no-repeat center center/cover;
 }
-.main_introduce .con .desc_box .desc h2 {
-  margin: 0 0 40px 0;
-  font-size: 40px;
+.main_introduce .content .img_box .itm:nth-child(4) {
+  background: url(../images/main_introduct_04.jpg) no-repeat center center/cover;
+}
+.main_introduce .content .img_box .itm:nth-child(5) {
+  background: url(../images/main_introduct_05.jpg) no-repeat center center/cover;
+}
+.main_introduce .content .img_box .itm:nth-child(6) {
+  background: url(../images/main_introduct_06.jpg) no-repeat center center/cover;
+}
+.main_introduce .content .img_box .itm:nth-child(7) {
+  grid-column: 2/span 2;
+  background: url(../images/main_introduct_07.jpg) no-repeat bottom 30% center/cover;
+}
+.main_introduce .content .txt_box h2 {
+  font-size: 48px;
   font-weight: 700;
+  margin: 0 0 24px 0;
 }
-.main_introduce .con .desc_box .desc h2::after {
-  content: "";
-  display: inline-block;
-  vertical-align: 12px;
-  width: 104px;
-  height: 1px;
-  background: #333;
-  margin: 0 10px;
-}
-.main_introduce .con .desc_box .desc p {
+.main_introduce .content .txt_box p {
   margin: 0 0 24px 0;
   line-height: 1.5;
 }
-.main_introduce .con .desc_box .link {
-  display: flex;
-  gap: 30px;
-}
-.main_introduce .con .desc_box .link figure:hover .img_box img {
-  transform: scale(1.1);
-}
-.main_introduce .con .desc_box .link figure .img_box {
-  margin: 0 0 16px 0;
-  overflow: hidden;
-}
-.main_introduce .con .desc_box .link figure .img_box img {
-  transition: 0.5s;
-}
-.main_introduce .con .desc_box .link figure figcaption strong {
-  display: block;
-  margin: 0 0 8px 0;
-  text-align: center;
-  font-size: 18px;
-  font-weight: 600;
-}
-.main_introduce .con .desc_box .link figure figcaption span {
-  display: block;
-  text-align: center;
-  font-size: 14px;
-}
-.main_introduce .con .img_box {
-  display: flex;
-  gap: 30px;
-  margin: 0 0 0 auto;
-}
-.main_introduce .con .img_box .left {
-  background: url(../images/introduct_00.jpg) no-repeat 63% center/cover;
-  margin: auto 0 0 0;
-  width: 240px;
-  height: 640px;
-}
-.main_introduce .con .img_box .right {
-  background: url(../images/introduct_000.jpg) no-repeat 50% center/cover;
-  width: 320px;
-  height: 640px;
+.main_introduce .content .txt_box p:nth-child(3) {
+  margin: 0 0 48px 0;
 }
 
 .main_product {
@@ -761,7 +762,7 @@ address {
   justify-content: space-between;
 }
 .main_notice .title h2 {
-  font-size: 40px;
+  font-size: 32px;
   font-weight: 700;
   margin: 0 0 24px 0;
 }
@@ -776,14 +777,25 @@ address {
 .main_notice .content > div {
   flex: 1;
 }
+@media (max-width: 768px) {
+  .main_notice .content {
+    flex-direction: column;
+  }
+}
 .main_notice .content .left ul {
   border-top: 2px solid #333333;
 }
 .main_notice .content .left ul li {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 24px 0;
   border-bottom: 1px solid #ddd;
+}
+@media (max-width: 768px) {
+  .main_notice .content .left ul li {
+    padding: 16px 0;
+  }
 }
 .main_notice .content .left ul li a {
   transition: 0.5s;
@@ -791,6 +803,11 @@ address {
 .main_notice .content .left ul li a strong {
   position: relative;
   padding: 0 0 0 20px;
+  display: -webkit-box;
+  white-space: normal;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .main_notice .content .left ul li a strong::before {
   content: "";
@@ -815,8 +832,14 @@ address {
   grid-template-columns: repeat(2, 1fr);
   gap: 8px;
 }
+.main_notice .content .right a {
+  display: block;
+}
 .main_notice .content .right .itm {
   position: relative;
+}
+.main_notice .content .right .itm a {
+  height: 100%;
 }
 .main_notice .content .right .itm .txt_box {
   position: absolute;

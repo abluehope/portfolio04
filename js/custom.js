@@ -37,13 +37,9 @@ $(function () {
         .addClass("on")
         .siblings()
         .removeClass("on");
-
       if (nidx > 1) {
         $(".header").addClass("on");
       } else {
-        $(".header").removeClass("on");
-      }
-      if (dir == "up") {
         $(".header").removeClass("on");
       }
     },
@@ -104,7 +100,7 @@ $(function () {
   const basic_slide = new Swiper(".basic_slide", {
     loop: true,
     speed: 1000,
-    slidesPerView: 3,
+    slidesPerView: 1,
     spaceBetween: 30,
     pagination: {
       el: ".swiper-pagination",
@@ -125,6 +121,12 @@ $(function () {
           .addClass("on")
           .siblings()
           .removeClass("on");
+      },
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 30,
       },
     },
   });
@@ -145,7 +147,7 @@ $(function () {
   const seasonal_slide = new Swiper(".seasonal_slide", {
     loop: true,
     speed: 1000,
-    slidesPerView: 3,
+    slidesPerView: 1,
     spaceBetween: 30,
     pagination: {
       el: ".swiper-pagination",
@@ -166,6 +168,12 @@ $(function () {
           .addClass("on")
           .siblings()
           .removeClass("on");
+      },
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 30,
       },
     },
   });
@@ -186,7 +194,7 @@ $(function () {
   const gift_slide = new Swiper(".gift_slide", {
     loop: true,
     speed: 1000,
-    slidesPerView: 3,
+    slidesPerView: 1,
     spaceBetween: 30,
     pagination: {
       el: ".swiper-pagination",
@@ -207,6 +215,12 @@ $(function () {
           .addClass("on")
           .siblings()
           .removeClass("on");
+      },
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 30,
       },
     },
   });
