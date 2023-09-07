@@ -126,6 +126,11 @@ address {
   font-weight: 500;
   color: #ffffff;
 }
+@media (max-width: 768px) {
+  .header .header_wrap .gnb > ul {
+    gap: 0;
+  }
+}
 .header .mobile_btn {
   display: none;
 }
@@ -170,9 +175,11 @@ address {
     transition: 0.5s;
   }
   .header .mobile_btn.on::before {
+    background: #333333;
     transform: rotate(45deg);
   }
   .header .mobile_btn.on::after {
+    background: #333333;
     transform: rotate(-45deg);
   }
   .header .mobile_btn.on button::before, .header .mobile_btn.on button::after {
@@ -208,6 +215,9 @@ address {
   }
   .header .gnb.on {
     left: 0;
+  }
+  .header .gnb.on ul li a {
+    color: #333333;
   }
   .header .gnb > ul {
     flex-direction: column;
@@ -1150,7 +1160,7 @@ address {
   position: fixed;
   bottom: 100px;
   right: 100px;
-  z-index: 999;
+  z-index: 998;
   opacity: 0;
   visibility: hidden;
   transition: 0.5s;

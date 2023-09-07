@@ -2,6 +2,13 @@ $(function () {
   $(".mobile_btn").on("click", function () {
     $(this).toggleClass("on");
     $(".gnb").toggleClass("on");
+    if ($(window).width() < 768) {
+      if ($(".header .header_wrap .gnb").hasClass("on")) {
+        $("h1 a img").css({ filter: "none" });
+      } else {
+        $("h1 a img").css({ filter: "brightness(0) invert(1)" });
+      }
+    }
   });
 
   $(".gnb").on("wheel touchmove", function (e) {

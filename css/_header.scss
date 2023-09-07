@@ -51,6 +51,10 @@
           color: $color-white;
         }
       }
+
+      @include res() {
+        gap: 0;
+      }
     }
   }
   .mobile_btn {
@@ -106,9 +110,11 @@
 
       &.on {
         &::before {
+          background: $color-body;
           transform: rotate(45deg);
         }
         &::after {
+          background: $color-body;
           transform: rotate(-45deg);
         }
         button {
@@ -161,6 +167,14 @@
 
       &.on {
         left: 0;
+
+        ul {
+          li {
+            a {
+              color: $color-body;
+            }
+          }
+        }
       }
 
       > ul {
