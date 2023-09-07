@@ -4,15 +4,25 @@
   .title {
     margin: 0 0 80px 0;
     h2 {
+      margin: 0 0 24px 0;
       font-size: 48px;
       font-weight: 700;
-      margin: 0 0 24px 0;
       text-align: center;
     }
     p {
       font-size: 18px;
       font-weight: 300;
       text-align: center;
+    }
+    @include res() {
+      margin: 0 0 40px 0;
+      h2 {
+        margin: 0 0 16px 0;
+        font-size: 32px;
+      }
+      p {
+        font-size: 16px;
+      }
     }
   }
 
@@ -23,11 +33,20 @@
         display: flex;
         gap: 16px;
         justify-content: center;
+
+        @include res() {
+          margin: 0 0 32px 0;
+        }
         li {
           a {
-            font-size: 14;
+            font-size: 16px;
             font-weight: 500;
             color: $color-gray;
+
+            @include res() {
+              font-size: 14px;
+              text-align: center;
+            }
           }
 
           &.on {
@@ -89,6 +108,13 @@
               right: 0;
               cursor: pointer;
             }
+            @include res() {
+              top: 76.5%;
+
+              .material-symbols-outlined {
+                font-size: 56px;
+              }
+            }
           }
 
           .dots {
@@ -100,6 +126,10 @@
 
             display: flex;
             gap: 5px;
+
+            @include res() {
+              bottom: 80px;
+            }
 
             li {
               width: 8px;
@@ -170,6 +200,13 @@
     left: 0%;
     width: 400px;
     height: 400px;
+    z-index: -1;
+    @include res() {
+      bottom: -10%;
+      left: -30%;
+      width: 300px;
+      height: 300px;
+    }
   }
   .bg_right {
     top: -25%;
@@ -177,5 +214,11 @@
     width: 1000px;
     height: 1000px;
     z-index: -1;
+    @include res() {
+      top: -20%;
+      right: -50%;
+      width: 500px;
+      height: 500px;
+    }
   }
 }

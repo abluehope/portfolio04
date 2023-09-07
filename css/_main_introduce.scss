@@ -47,6 +47,14 @@
           background: url(../images/main_introduct_07.jpg) no-repeat bottom 30%
             center/cover;
         }
+
+        @include res() {
+          height: 100px;
+        }
+      }
+
+      @include res() {
+        width: 100%;
       }
     }
 
@@ -55,6 +63,10 @@
         font-size: 48px;
         font-weight: 700;
         margin: 0 0 24px 0;
+
+        @include res() {
+          font-size: 32px;
+        }
       }
       p {
         margin: 0 0 24px 0;
@@ -65,5 +77,12 @@
         }
       }
     }
+
+    @include res() {
+      flex-direction: column;
+    }
+  }
+  @include res() {
+    padding: 80px 0;
   }
 }

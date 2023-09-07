@@ -10,6 +10,9 @@
     }
     .left {
       background: url(../images/caramel_bg.jpg);
+      @include res() {
+        background: url(../images/caramel_bg.jpg) no-repeat center center/cover;
+      }
     }
     .right {
       display: flex;
@@ -17,28 +20,72 @@
       justify-content: center;
       .desc_box {
         margin: 0 0 32px 0;
+
+        @include res() {
+          margin: 0 0 16px 0;
+        }
+
         .s_title {
           display: block;
           margin: 0 0 16px 0;
           font-weight: 300;
           padding: 0 0 0 8px;
           letter-spacing: 0.2em;
+
+          @include res() {
+            padding: 2px 0 2px 2px;
+            position: absolute;
+            top: 25%;
+            left: 19px;
+            transform: translate(0, -50%);
+            background: $color-point;
+            color: #fff;
+          }
         }
         h2 {
           margin: 0 0 40px 0;
           width: 320px;
           font-size: 100px;
           font-weight: 600;
+
+          @include res() {
+            margin: 0 0 24px 0;
+            width: auto;
+            font-size: 56px;
+
+            position: absolute;
+            top: 38%;
+            left: 15px;
+            transform: translate(0, -50%);
+          }
         }
         p {
           margin: 0 0 24px 0;
           width: 560px;
           line-height: 1.5;
+
+          @include res() {
+            width: auto;
+          }
         }
       }
       .btn {
         align-self: flex-start;
       }
+      @include res() {
+        padding: 0 15px;
+      }
     }
+    @include res() {
+      position: relative;
+      flex-direction: column;
+      gap: 160px;
+      > * {
+        flex: 1 0 240px;
+      }
+    }
+  }
+  @include res() {
+    padding: 80px 0;
   }
 }

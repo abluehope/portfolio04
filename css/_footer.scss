@@ -30,16 +30,30 @@
             height: 10px;
             transform: translate(-50%, -50%);
             background: $color-gray;
+
+            @include res() {
+              display: none;
+            }
           }
         }
         strong {
           font-weight: 600;
+        }
+
+        @include res() {
+          margin: 0 0 16px 0;
+          flex-direction: column;
+          gap: 8px;
         }
       }
       .copy {
         font-size: 14px;
         color: $color-gray;
       }
+    }
+    @include res() {
+      flex-wrap: wrap;
+      gap: 0;
     }
   }
 }

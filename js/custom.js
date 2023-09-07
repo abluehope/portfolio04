@@ -19,13 +19,14 @@ $(function () {
   $(".main_full").fullpage({
     anchors: [
       "main",
-      "introduct",
+      "introduce",
       "product",
       "hiyorika",
       "caramel",
       "notice",
       "footer",
     ],
+    responsiveWidth: 768,
     afterRender: function () {
       setTimeout(function () {
         $(".section").eq(0).addClass("on");
@@ -39,8 +40,10 @@ $(function () {
         .removeClass("on");
       if (nidx > 1) {
         $(".header").addClass("on");
+        $(".to_top").addClass("on");
       } else {
         $(".header").removeClass("on");
+        $(".to_top").removeClass("on");
       }
     },
   });

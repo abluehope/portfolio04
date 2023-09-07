@@ -71,7 +71,7 @@
         position: absolute;
         inset: 14px 5px auto 5px;
         height: 2px;
-        background: $color-body;
+        background: $color-white;
 
         transition: 0.5s;
       }
@@ -86,7 +86,7 @@
           inset: 7px 5px auto 5px;
           position: absolute;
           height: 2px;
-          background: $color-body;
+          background: $color-white;
           opacity: 1;
 
           transition: 0.5s;
@@ -97,7 +97,7 @@
           inset: auto 5px 7px 5px;
           position: absolute;
           height: 2px;
-          background: $color-body;
+          background: $color-white;
           opacity: 1;
 
           transition: 0.5s;
@@ -122,6 +122,24 @@
   }
 
   @include res() {
+    &.on {
+      .mobile_btn {
+        &::before,
+        &::after {
+          background: $color-body;
+        }
+
+        button {
+          &::before {
+            background: $color-body;
+          }
+
+          &::after {
+            background: $color-body;
+          }
+        }
+      }
+    }
     h1 {
       z-index: 1000;
       img {

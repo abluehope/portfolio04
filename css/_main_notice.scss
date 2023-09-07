@@ -3,13 +3,12 @@
   .title {
     display: flex;
     justify-content: space-between;
+    margin: 0 0 16px 0;
     h2 {
       font-size: 32px;
       font-weight: 700;
-      margin: 0 0 24px 0;
     }
     .material-symbols-outlined {
-      padding: 10px 0;
       font-size: 32px;
     }
   }
@@ -22,7 +21,10 @@
     }
 
     @include res() {
-      flex-direction: column;
+      flex-wrap: wrap;
+      > div {
+        flex: 1 0 100%;
+      }
     }
 
     .left {
@@ -61,6 +63,9 @@
                 border-radius: 50%;
                 background: $color-point;
                 transform: translate(0, -50%);
+              }
+              @include res() {
+                width: 240px;
               }
             }
 
@@ -132,6 +137,10 @@
       .contact {
         background: url(../images/notice_btn_03.jpg) no-repeat center
           center/cover;
+      }
+
+      @include res() {
+        height: 200px;
       }
     }
   }
